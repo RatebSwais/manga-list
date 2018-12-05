@@ -2,33 +2,44 @@
 
 $(function(){
     
-   const leftContainer = document.getElementsByClassName("left-content");
-   const list = document.createElement("ul");
-   list.setAttribute('class', 'chapter-list');
-   const listItem = document.createElement("li"); 
-   listItem.setAttribute('class', 'chapters');
-   leftContainer.appendChild(list);
-   list.appendChild(listItem);
+   const leftContainer = document.getElementById('left');
+   const chapterTable = document.createElement("table"); 
+   chapterTable.setAttribute('class', 'chapterTable');  
+   leftContainer.appendChild(chapterTable);
+    console.dir(chapterTable.rows);
     
-    var chapterEndPoint = '';
+    var mangaChapterEndPoint = 'https://www.mangaeden.com/api/manga/';
+    var mangaid = getQueryVariable("clickedid");
+    console.log (mangaid);
+    fetchChapters(mangaid).then(function(data){ 
+                  console.log(data);  
+                  var chapters = data.chapters;
+                  renderChapters(chapters);
+             });
     
     
-    fetchChapters().then(function (data, status){
-        
-       if(status == 'success') {
-           
-       } 
-        
-        else {
-            handleError();
+    
+    
+    
+    function renderChapters(chapters) {
+        for (var index in chapters) {
+            var currentChapter = chapters[index][2];
+            console.log(currentChapter);
+            var row = chapterTable.insertRow();
+            var cell = row.insertCell();
+            cell.textContent = currentChapter;   
+            chapterTable.appendChild(row);
         }
         
-    });
+    }
     
+    function fetchChapters(id) { 
+        return $.get(mangaChapterEndPoint + id);
+    } 
     
-    
-    function fetchChapters() {
-        return $.get()
+    function getQueryVariable(id) {
+        var query = window.location.search.substring(1);
+        return query.split("=")[1];
     }
     
     function handleError() {

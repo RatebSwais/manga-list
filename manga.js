@@ -1,7 +1,6 @@
     'use strict'
     $(function(){
 
-
     const app = document.getElementById("root");
     const container = document.createElement("div");
     container.setAttribute('class', 'container'); 
@@ -10,7 +9,6 @@
     var mangaListEndPoint = 'https://www.mangaeden.com/api/list/0/';    
     var badimage = 'https://cdn1.iconfinder.com/data/icons/file-type-18/512/file__type__document__format__computer__jpg__image_-512.png';    
     var limitedmangalist;
-    var mangaChapterEndPoint = 'https://www.mangaeden.com/api/manga/';
     
     //Begin
     fetchManga().then(function (data, status){
@@ -19,14 +17,10 @@
            remapManga(data);
            limitmangalist();
            renderManga(); 
-            console.log(limitedmangalist);
            $("body").on("click", "img", function(event){ 
               var clickedCard = $(this);
               var clickedCardId = clickedCard.data('id')
-              fetchChapters(clickedCardId).then(function(data){ 
-                  console.log(data);    
-             });
-              //window.location.href = 'manga-info.html'; 
+               window.open("manga-info.html?clickedid=" + clickedCardId);
                
            });
             
@@ -40,23 +34,16 @@
 
     });   
 
-        
-    function fetchChapters(id) { 
-        return $.get(mangaChapterEndPoint + id);
-    }    
-        
     function limitmangalist() {
-      limitedmangalist = Object.keys(mangalist).slice(0, 21).reduce(function(newObj, current){
+      limitedmangalist = Object.keys(mangalist).sort().slice(0, 21).reduce(function(newObj, current){
           newObj[current] = mangalist[current];
           return newObj;
       }, {});
-        console.log(limitedmangalist);
       };                                                                                                                   
     function renderManga(){
     for (var index in limitedmangalist){
         
         var currentManga = limitedmangalist[index];
-        console.log(currentManga);
         const card = document.createElement("div");
         card.setAttribute('class', 'card');
         const coverImage = $('<img>', {'src': 'https://cdn.mangaeden.com/mangasimg/' + currentManga.image});
@@ -68,7 +55,6 @@
         h1.textContent = currentManga.title;
         container.appendChild(card);
         coverImage.appendTo(card);
-      //  card.appendChild(coverImage);
         card.appendChild(h1);
     };
     }
@@ -97,8 +83,7 @@
         
     function handleError() {
         console.error(error);
-    }
-    
+    } 
 
     });
 
