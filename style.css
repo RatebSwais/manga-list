@@ -73,9 +73,22 @@
     font-size: 1.5rem;
     color: white;
     }
-    
 
-/*
+    .container-left .chapterTable, tr, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .chapterTable td {
+    padding: 15px;
+    }
+
+
+
+
+
+
+    /*
     .container-right {
         float: right;
         max-width: 300px;
@@ -84,15 +97,15 @@
         position: absolute;
         top: 8px;
         right: 16px;
-        
-        
+
+
     } 
- 
+
     .container-right search {
         display: inline-block;
     }
 
-*/
+    */
     .card:nth-child(2n) h1 {
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     }
