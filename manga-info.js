@@ -5,7 +5,7 @@ $(function(){
    const leftContainer = document.getElementById('left');
    const rightContainer = document.getElementById('right');
    const chapterTable = document.createElement("table");
-    chapterTable.setAttribute('id', 'table')
+   chapterTable.setAttribute('id', 'table')
    const descriptionBox = document.getElementById("description");
    const descriptionText = document.createElement("p");
    const titleText = document.createElement("h1");
@@ -16,7 +16,6 @@ $(function(){
    descriptionBox.appendChild(titleText);
    descriptionBox.appendChild(descriptionText);
    rightContainer.appendChild(mangaImage);  
-    console.dir(chapterTable)
     
     
     var mangaChapterEndPoint = 'https://www.mangaeden.com/api/manga/';
