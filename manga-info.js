@@ -4,7 +4,8 @@ $(function(){
     
    const leftContainer = document.getElementById('left');
    const rightContainer = document.getElementById('right');
-   const chapterTable = document.createElement("table"); 
+   const chapterTable = document.createElement("table");
+    chapterTable.setAttribute('id', 'table')
    const descriptionBox = document.getElementById("description");
    const descriptionText = document.createElement("p");
    const titleText = document.createElement("h1");
@@ -14,7 +15,9 @@ $(function(){
    leftContainer.appendChild(chapterTable);
    descriptionBox.appendChild(titleText);
    descriptionBox.appendChild(descriptionText);
-   rightContainer.appendChild(mangaImage);
+   rightContainer.appendChild(mangaImage);  
+    console.dir(chapterTable)
+    
     
     var mangaChapterEndPoint = 'https://www.mangaeden.com/api/manga/';
     var mangaid = getQueryVariable("clickedid");
@@ -29,6 +32,14 @@ $(function(){
                   renderChapters(chapters);
                   renderDescriptionTitle(mangaTitle, description);
                   renderCoverImage(image);
+        
+                $("body").on("click", "td", function(event){ 
+                var clickedChapter = $(this);
+                var clickedChapterId = clickedChapter.data('id')
+                window.open("reading-page.html?clickedid=" + clickedChapterId);
+               
+           });
+                    
              });
     
     
@@ -48,14 +59,14 @@ $(function(){
         for (var index in chapters) {
             var currentChapter = chapters[index][2];
             var currentChapterDate = new Date(chapters[index][1]*1000).toDateString();
-            console.log(currentChapter);
-           
+            var currentChapterID = chapters[index][3];
             var row = chapterTable.insertRow();
-            var cell = row.insertCell();
-            var cell2 = row.insertCell()
-            cell.textContent = currentChapter;   
-            cell2.textContent = currentChapterDate;
+            var cell = $('<td id=chapter>' + currentChapter +'</td>');
+            var cell2 = $('<td>' + currentChapterDate + '</td>');
+            cell.data('id', currentChapterID);
             chapterTable.appendChild(row);
+            cell.appendTo(row);
+            cell2.appendTo(row);
         }
         
     }

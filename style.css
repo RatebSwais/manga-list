@@ -3,7 +3,8 @@
     *{
     box-sizing: border-box;
     }
-    html{
+
+    html, body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Dosis', sans-serif;
@@ -26,20 +27,19 @@
     .clearfix { display: block; }
     /* close commented backslash hack */
 
-    .container-right {
-    float: left;
-    }
+   
 
     #root{
     max-width: 1200px;
-    margin: 80px 100px;
+    margin: 100px auto;
     }
 
     .container{
     display: flex;
     flex-wrap: wrap;
     }
-
+    
+    
 
     .card {
     margin: 1rem;
@@ -65,7 +65,7 @@
 
     }
 
-    .container-left h1 {
+    .container h1 {
     text-align: center;
     padding: 1.5rem 2.5rem;
     background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
@@ -75,18 +75,36 @@
     }
 
     .container-left .chapterTable, tr, td {
-        border: 1px solid black;
+        border: 5px solid #414c63;
         border-collapse: collapse;
+    }
+
+
+    .chapterTable {
+            
     }
 
     .chapterTable td {
     padding: 15px;
+    
+    }
+
+    .chapterTable #chapter:hover {
+        cursor: pointer;
     }
 
 
 
 
-
+    #cimage {
+        height: 40%; 
+        width: 40%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 
     /*
     .container-right {
