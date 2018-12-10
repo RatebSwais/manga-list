@@ -17,6 +17,7 @@
            remapManga(data);
            limitmangalist();
            renderManga(); 
+            
            $("body").on("click", "img", function(event){ 
               var clickedCard = $(this);
               var clickedCardId = clickedCard.data('id')

@@ -32,6 +32,8 @@ $(function(){
                   renderDescriptionTitle(mangaTitle, description);
                   renderCoverImage(image);
         
+            
+        
                 $("body").on("click", "td", function(event){ 
                 var clickedChapter = $(this);
                 var clickedChapterId = clickedChapter.data('id')
