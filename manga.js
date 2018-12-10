@@ -36,7 +36,7 @@
     });   
 
     function limitmangalist() {
-      limitedmangalist = Object.keys(mangalist).slice(0, 21).reduce(function(newObj, current){
+      limitedmangalist = Object.keys(mangalist).slice(0, 30).reduce(function(newObj, current){
           newObj[current] = mangalist[current];
           return newObj;
       }, {});
