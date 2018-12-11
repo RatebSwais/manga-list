@@ -7,6 +7,7 @@ $(function(){
     chapterWrapper.appendChild(chapterDiv);
     var chapterImage = document.createElement("img");
     chapterImage.setAttribute('id', 'cimage');
+    chapterImage.setAttribute('class', 'img-responsive');
     chapterDiv.appendChild(chapterImage);
     
     var chapterEndPoint = 'https://www.mangaeden.com/api/chapter/';

@@ -3,19 +3,21 @@
 $(function(){
     
    const leftContainer = document.getElementById('left');
-   const rightContainer = document.getElementById('right');
+   //const rightContainer = document.getElementById('right');
    const chapterTable = document.createElement("table");
    chapterTable.setAttribute('id', 'table')
    const descriptionBox = document.getElementById("description");
    const descriptionText = document.createElement("p");
    const titleText = document.createElement("h1");
    const mangaImage = document.createElement("img");
+   const mangaCard = document.createElement('div');
+       
    
    chapterTable.setAttribute('class', 'chapterTable');  
    leftContainer.appendChild(chapterTable);
    descriptionBox.appendChild(titleText);
    descriptionBox.appendChild(descriptionText);
-   rightContainer.appendChild(mangaImage);  
+   leftContainer.appendChild(mangaImage);  
     
     
     var mangaChapterEndPoint = 'https://www.mangaeden.com/api/manga/';
