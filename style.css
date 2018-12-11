@@ -168,7 +168,7 @@
     box-sizing: border-box;
     font-size: 2em; 
     overflow-x: hidden;
-    position: relative    
+    position: relative;    
     }
 
     .card {
@@ -190,6 +190,10 @@
     overflow-y: scroll;
     }
 
+    #description {
+    margin: 2em 2em;
+    flex: 0 0 100%;    
+    }
     }
 
     @media screen and (min-width: 320px) and (max-width: 768px){
@@ -212,11 +216,13 @@
     height: 200px;
     overflow-y: scroll;
     }
-
-
-    #description {
+ #description {
     margin: 2em 2em;
     }
+        #left{
+                flex: 0 0 100%;    
+
+        }
     }
 
 
