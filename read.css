@@ -1,8 +1,27 @@
-html, body {
-    height: 100%;
-    width: 100%;
+html, body { overflow: none !important; overflow-x: none !important; overflow-y: none !important; height: 100%; width: 100%; }
+
+#chapterwrap {
+  margin: auto;
+  width: 100%; 
+  padding: 10px;  
+  background: black;
 }
 
-.main-content {
-    height: 100%;
+#cimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  width: 500px;
+  z-index: -1;
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+
+-webkit-background-size: cover;
+
+-moz-background-size: cover;
+
+-o-background-size: cover;
+
+background-size: cover;    
 }
