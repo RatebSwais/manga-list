@@ -86,8 +86,10 @@
     flex: 0 0 100%;
     }
 
-   
 
+#description {
+    margin: 50px 50px;
+}
     .#left .chapterTable, tr, td {
     border-collapse: collapse;
     }
@@ -106,10 +108,10 @@
     padding: 20px;
 
     }
-    
-#left p img {
+
+    #left p img {
     float: right;
-}
+    }
 
     .chapterTable {
     z-index: 1;
@@ -157,11 +159,11 @@
 
 
     @media screen and (min-width: 320px) {
-        
+
     body { 
-      font-size: 2em; 
-   }
-        
+    font-size: 2em; 
+    }
+
     .card {
     flex: 1 1 calc(50% - 2rem);
     }
@@ -175,10 +177,30 @@
     background-color:rgba(63,81,181,0.2);
 
     }
-    
-         
+
+
     }
 
+    @media screen and (min-width: 320px) and (max-width: 768px){
+    img {
+    width: 100%;   
+    height: 50vw;
+    }  
+        
+        #left {
+            flex: 0 0 100%;
+        }
+        
+        #left p {
+            height: 200px;
+            overflow-y: scroll;
+        }
+        
+      
+        #description {
+            margin: 2em 2em;
+        }
+    }
 
 
     @media screen and (min-width: 900px) {
@@ -189,7 +211,7 @@
     #root {
     margin: auto auto;
     }
- .chapterTable tr:hover {
+    .chapterTable tr:hover {
     cursor: pointer;
     background-color:rgba(63,81,181,0.2);
 

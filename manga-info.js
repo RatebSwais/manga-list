@@ -14,11 +14,11 @@ $(function(){
        
    
    chapterTable.setAttribute('class', 'chapterTable');  
-   leftContainer.appendChild(chapterTable);
    descriptionBox.appendChild(titleText);
+        descriptionBox.appendChild(mangaImage);  
+
    descriptionBox.appendChild(descriptionText);
-   leftContainer.appendChild(mangaImage);  
-    
+    descriptionBox.appendChild(chapterTable);
     
     var mangaChapterEndPoint = 'https://www.mangaeden.com/api/manga/';
     var mangaid = getQueryVariable("clickedid");
