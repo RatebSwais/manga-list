@@ -1,27 +1,62 @@
-html, body { overflow: none !important; overflow-x: none !important; overflow-y: none !important; height: 100%; width: 100%; }
+    * {
+    box-sizing: border-box;
+    }
 
-#chapterwrap {
-  margin: auto;
-  width: 100%; 
-  padding: 10px;  
-  background: black;
-}
+    html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    }
 
-#cimage {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  height: auto;
-  width: 500px;
-  z-index: -1;
-  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+    #chapterwrap {
+    width: 100%; 
+    padding: 10px;  
+    background: black;
+    margin: 0;
+    }
 
--webkit-background-size: cover;
+    #cimage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    width: 500px;
+    z-index: -1;
+    box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
 
--moz-background-size: cover;
+    -webkit-background-size: cover;
 
--o-background-size: cover;
+    -moz-background-size: cover;
 
-background-size: cover;    
-}
+    -o-background-size: cover;
+
+    background-size: cover;    
+
+
+
+    }
+
+
+    @media screen and (min-width: 320px) {
+
+    html,body {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    min-height: 100%;
+    background: black;
+    }
+
+        #cimage{
+            margin: 100px 0;
+        }
+
+
+
+    }
+

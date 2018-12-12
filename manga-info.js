@@ -15,7 +15,7 @@ $(function(){
    
    chapterTable.setAttribute('class', 'chapterTable');  
    descriptionBox.appendChild(titleText);
-        descriptionBox.appendChild(mangaImage);  
+   descriptionBox.appendChild(mangaImage);  
 
    descriptionBox.appendChild(descriptionText);
     descriptionBox.appendChild(chapterTable);
