@@ -2,6 +2,10 @@
     $(function(){
 
     const app = document.getElementById("root");
+    const latest_updates = document.createElement("h1");
+    latest_updates.setAttribute("id", "latest");
+    app.appendChild(latest_updates);
+    latest_updates.textContent = "Latest updates";
     const container = document.createElement("div");
     container.setAttribute('class', 'container'); 
     app.appendChild(container);   
@@ -9,7 +13,6 @@
     var mangaListEndPoint = 'https://www.mangaeden.com/api/list/0/';    
     var badimage = 'https://cdn1.iconfinder.com/data/icons/file-type-18/512/file__type__document__format__computer__jpg__image_-512.png';    
     var limitedmangalist;
-        console.log(mangalist)
     var today  = new Date().getTime()/1000; 
     console.log(today);
     var d = new Date();
