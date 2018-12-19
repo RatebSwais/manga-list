@@ -30,9 +30,9 @@ background-size: cover;
 }
 
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
 
-    html, body { overflow: none !important; overflow-x: none !important; overflow-y: none !important; height: 50%; width: 100%; min-height: 100vh;}
+    html, body { overflow: none !important; overflow-x: none !important; overflow-y: none !important; height: 50%; width: 100%; min-height: 100vh; background: black;}
     
     body {
     width: 100%;
@@ -46,7 +46,9 @@ background-size: cover;
     }
 
     
-        
+    #cimage {
+        margin: 100px 0;
+    }
         
     }
 

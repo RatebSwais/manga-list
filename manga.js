@@ -9,7 +9,13 @@
     var mangaListEndPoint = 'https://www.mangaeden.com/api/list/0/';    
     var badimage = 'https://cdn1.iconfinder.com/data/icons/file-type-18/512/file__type__document__format__computer__jpg__image_-512.png';    
     var limitedmangalist;
-    
+        console.log(mangalist)
+    var today  = new Date().getTime()/1000; 
+    console.log(today);
+    var d = new Date();
+    d.setDate(d.getDate() - 2);
+    var tda = d.getTime()/1000;
+        
     //Begin
     fetchManga().then(function (data, status){
         if(status == 'success'){ 
@@ -36,15 +42,16 @@
     });   
 
     function limitmangalist() {
-      limitedmangalist = Object.keys(mangalist).slice(0, 30).reduce(function(newObj, current){
+      limitedmangalist = Object.keys(mangalist).slice(0, 1000).reduce(function(newObj, current){
           newObj[current] = mangalist[current];
           return newObj;
       }, {});
       };                                                                                                                   
     function renderManga(){
-    for (var index in limitedmangalist){
+    for (var index in mangalist){
         
-        var currentManga = limitedmangalist[index];
+        var currentManga = mangalist[index];
+        if(currentManga.lastChapterDate <= today && currentManga.lastChapterDate >= tda){
         const card = document.createElement("div");
         card.setAttribute('class', 'card');
         const coverImage = $('<img>', {'src': 'https://cdn.mangaeden.com/mangasimg/' + currentManga.image});
@@ -59,7 +66,7 @@
         card.appendChild(h1);
     };
     }
-    
+    }
     function fetchManga() {
         return $.get(mangaListEndPoint);
     }
