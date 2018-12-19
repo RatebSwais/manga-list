@@ -44,24 +44,27 @@
         width: 100%;
         text-align: center;
         margin-top: 30px;
+        float: left;
         }
 
         .container{
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
+        
         }
-
-
+        
+#head {
+    padding: 25px;
+}
 
         .card {
         margin: 1rem;
         background: white;
         box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
-        border-radius: 12px;
         overflow: hidden;
         transition: all .2s linear;
-        height: auto;	
-        
+        height: auto;	    
         }
 
         /* On mouse-over, add a deeper shadow */
@@ -80,11 +83,12 @@
 
         .container h1 {
         text-align: center;
-        padding: 1.5rem 2.5rem;
+        padding: 0.5rem 0.5rem;
         background-image: linear-gradient(120deg, #0f0c29 0%, #302b63 0%, #24243e 100%);
-        margin: 0 0 0 0;
+        margin: 0px 0px 0px 0px ;
         font-size: 1.5rem;
         color: white;
+            
         }
 
         .wrapper {
@@ -141,7 +145,10 @@
         background-color:rgba(63,81,181,0.2);
 
         }
-
+.chapterTable #headrow:hover {
+    background-color: transparent;
+    cursor: auto;
+}
 
 
 

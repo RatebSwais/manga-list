@@ -58,14 +58,19 @@ $(function(){
     }
     
     function renderChapters(chapters) {
-           
+        var head = $("<th id=head>" + 'Chapter' + '</th>');
+        var head2 = $("<th id=head>" + 'Date added' + '</th>');
+        var headrow = chapterTable.insertRow();
+        headrow.setAttribute('id', 'headrow');
+        head.appendTo(headrow);
+        head2.appendTo(headrow);
         for (var index in chapters) {
             var currentChapter = chapters[index][2];
             var currentChapterDate = new Date(chapters[index][1]*1000).toDateString();
             var currentChapterID = chapters[index][3];
             var row = chapterTable.insertRow();
             var cell = $('<td id=chapter>' + currentChapter +'</td>');
-            var cell2 = $('<td>' + currentChapterDate + '</td>');
+            var cell2 = $('<td id=chapter>' + currentChapterDate + '</td>');
             cell.data('id', currentChapterID);
             chapterTable.appendChild(row);
             cell.appendTo(row);
