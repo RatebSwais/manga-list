@@ -32,6 +32,8 @@ $(function(){
                 document.getElementById('cimage').src = 'https://cdn.mangaeden.com/mangasimg/' + cImages[currentImage][1];
             }      
             
+            
+            
         });
     }
     

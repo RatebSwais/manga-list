@@ -59,7 +59,7 @@
     function searchMangaList(input) {
         for (var index in mangalist) {
             var currentManga = mangalist[index];
-            if(currentManga.title == input) {
+            if(currentManga.title == input || currentManga.alias == input) {
                 return currentManga.id;
             }
         }

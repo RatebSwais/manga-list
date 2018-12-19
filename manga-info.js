@@ -72,6 +72,7 @@ $(function(){
             var cell = $('<td id=chapter>' + currentChapter +'</td>');
             var cell2 = $('<td id=chapter>' + currentChapterDate + '</td>');
             cell.data('id', currentChapterID);
+            cell2.data('id', currentChapterID);
             chapterTable.appendChild(row);
             cell.appendTo(row);
             cell2.appendTo(row);
