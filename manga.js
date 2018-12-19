@@ -34,6 +34,18 @@
                
            });
             
+             $("body").on("click", ".btn", function(event){ 
+               
+                var input = document.getElementById("search").value;
+                 
+                 var id = searchMangaList(input);
+                 console.log(id);
+                 window.open("manga-info.html?clickedid=" + id);
+               
+           });
+            
+           
+            
         }
 
         
@@ -44,6 +56,15 @@
 
     });   
 
+    function searchMangaList(input) {
+        for (var index in mangalist) {
+            var currentManga = mangalist[index];
+            if(currentManga.title == input) {
+                return currentManga.id;
+            }
+        }
+    }    
+        
     function limitmangalist() {
       limitedmangalist = Object.keys(mangalist).slice(0, 1000).reduce(function(newObj, current){
           newObj[current] = mangalist[current];
